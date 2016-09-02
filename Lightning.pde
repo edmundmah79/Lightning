@@ -7,39 +7,34 @@ int yC = (int)(Math.random()*255);
 int zC = (int)(Math.random()*255);
 int aX = (int)(Math.random()*18)-9;
 int aY = (int)(Math.random()*9);
+int eY = (int)(Math.random()*100)+200;
 void setup()
 {
   size(300,300);
   noStroke();
   fill(170,170,170);
-  rect(0,0,300,150);
+  rect(0,0,300,200);
   fill(0,255,0);
-  rect(0,150,300,150);
+  rect(0,200,300,150);
 }
 void draw()
 {
 	target();
-	while(endY < mouseY)
+	while(endY <= eY)
 	{
-		if (endY <= mouseY)
-		{
-			stroke(xC,yC,zC);
-			strokeWeight(2);
-			endX = startX + aX;
-			endY = startY + aY;
-			line(startX,startY,endX,endY);
-			startX = endX;
-			startY = endY;
-			xC = (int)(Math.random()*255);
-			yC = (int)(Math.random()*255);
-			zC = (int)(Math.random()*255);
-			aX = (int)(Math.random()*18)-9;
-			aY = (int)(Math.random()*9);
-		}
-		else 
-		{
-
-		}	
+		stroke(xC,yC,zC);
+		strokeWeight(2);
+		endX = startX + aX;
+		endY = startY + aY;
+		line(startX,startY,endX,endY);
+		startX = endX;
+		startY = endY;
+		xC = (int)(Math.random()*255);
+		yC = (int)(Math.random()*255);
+		zC = (int)(Math.random()*255);
+		aX = (int)(Math.random()*18)-9;
+		aY = (int)(Math.random()*9);	
+		eY = (int)(Math.random()*100)+200;
 	}
 	cloud3();
 	cloud1();
@@ -49,6 +44,11 @@ void draw()
 
 void mousePressed()
 {
+	noStroke();
+ 	fill(170,170,170);
+  	rect(0,0,300,200);
+  	fill(0,255,0);
+  	rect(0,200,300,150);
 	startX = 150;
 	startY = 0;
 	endX = 150;
@@ -82,6 +82,7 @@ void cloud3()
 	ellipse(0,50,70,70);
 	ellipse(-90,60,50,50);
 }
+
 void target()
 {
 	stroke(255,0,0);
