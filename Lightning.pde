@@ -33,8 +33,8 @@ void draw()
 		yC = (int)(Math.random()*255);
 		zC = (int)(Math.random()*255);
 		aX = (int)(Math.random()*18)-9;
-		aY = (int)(Math.random()*9);	
-		eY = (int)(Math.random()*100)+200;
+		aY = (int)(Math.random()*9);
+		eY = (int)(Math.random()*100)+200;	
 	}
 	cloud3();
 	cloud1();
